@@ -1,4 +1,5 @@
 var timeEl = document.getElementById("time")
+var deck = document.querySelector("section")
 
 var secondsLeft = 10;
 
@@ -13,15 +14,9 @@ function setTime() {
         alert("Game Over");
         clearInterval(timerInterval);
         timeEl.setAttribute("style", "opacity: 0;");
-        return;l
+        return;
       }
     }, 1000)
     return;
   }
 
-  function shuffler() {
-
-  }
-
-
-  
