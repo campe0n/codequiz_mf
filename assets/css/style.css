@@ -14,11 +14,12 @@ header {
 
 #vh {
     color:rebeccapurple;
+    margin-left: 1%;
 }
 
 #time {
     box-sizing: border-box;
-    margin-right: 5%;
+    margin-right: 2.5%;
 }
 
 main {
