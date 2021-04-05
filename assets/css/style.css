@@ -16,6 +16,11 @@ header {
     color:rebeccapurple;
 }
 
+#time {
+    box-sizing: border-box;
+    margin-right: 5%;
+}
+
 main {
     height: 80%;
     width: 100%;
