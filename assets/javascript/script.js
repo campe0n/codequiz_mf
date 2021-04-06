@@ -1,5 +1,10 @@
+var body = document.body;
+var leaderboard = document.getElementById("vh")
 var timeEl = document.getElementById("time")
 var deck = document.querySelector("section")
+var header = document.querySelector("h1")
+var text = document.getElementById("cardtxt")
+var button = document.querySelector("button")
 
 var secondsLeft = 10;
 
@@ -20,3 +25,8 @@ function setTime() {
     return;
   }
 
+  function setDeck() {
+    button.remove();
+    header.remove();
+    text.remove();
+  }
