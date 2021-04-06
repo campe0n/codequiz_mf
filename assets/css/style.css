@@ -6,11 +6,6 @@ header {
     width: 100%;
 }
 
-.hrdtxt {
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-}
 
 #vh {
     color:rebeccapurple;
@@ -44,7 +39,7 @@ section {
     align-items: center;
 }
 
-h1 {
+#hdrtxt {
     font-size: 36px;
     text-align: center;
     margin: 0;
