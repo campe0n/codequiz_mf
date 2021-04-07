@@ -9,7 +9,7 @@ var b1 = document.getElementById("b1");
 var b2 = document.getElementById("b2");
 var b3 = document.getElementById("b3");
 var b4 = document.getElementById("b4");
-var userInput = document.body.querySelector("div")
+var userInput = document.body.querySelector("input")
 
 var secondsLeft = 0;
 var score = 0;
