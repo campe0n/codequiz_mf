@@ -70,3 +70,7 @@ button {
     height: 30px;
     opacity: 0;
 }
+
+#playerinits {
+    opacity: 0;
+}

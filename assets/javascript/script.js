@@ -9,6 +9,7 @@ var b1 = document.getElementById("b1");
 var b2 = document.getElementById("b2");
 var b3 = document.getElementById("b3");
 var b4 = document.getElementById("b4");
+var userInput = document.body.querySelector("div")
 
 var secondsLeft = 0;
 var score = 0;
@@ -108,16 +109,15 @@ function setTime() {
             b2.remove();
             b3.remove();
             b4.remove();
+            userInput.setAttribute('style', 'opacity:1;')
             timeEl.remove();
-            qText.nodeValue="Your Score"
+            qText.nodeValue="Your Score:"
             var scoreText = document.createElement('H1');
             var scoreTextNode = document.createTextNode(score);
             scoreText.appendChild(scoreTextNode);
             body.appendChild(scoreText)
+            question.setAttribute('style', 'margin-bottom: 0;')
             scoreText.setAttribute('style', 'font-size: 40px; font-weight: bold; display: flex; justify-content:center; margin:0;');
-
-            var scoreBox = document.createElement("div")
-            var scoreText = document.createTextNode("", score)
           })
         })
       })
