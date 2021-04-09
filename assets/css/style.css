@@ -84,3 +84,12 @@ opacity: 0;
 #submitBtn {
     opacity: 0;
 }
+
+h2 {
+    margin-top: 1;
+    opacity: 0;
+}
+
+ul {
+    list-style: none;
+}

@@ -3,6 +3,7 @@ var leaderboard = document.getElementById("vh");
 var timeEl = document.getElementById("time");
 var startDeck = document.querySelector("section");
 var startHeader = document.querySelector("h1");
+var h2 = document.querySelector("h2");
 var startText = document.getElementById("cardtxt");
 var startBtn = document.getElementById("startButton");
 var b1 = document.getElementById("b1");
@@ -11,7 +12,9 @@ var b3 = document.getElementById("b3");
 var b4 = document.getElementById("b4");
 var userInput = document.getElementById("playerinits");
 var submitBtn = document.getElementById('submitBtn');
-var saveInput = localStorage.getItem("saveInput");
+var storedInput = localStorage.getItem('saveInput');
+var ul = document.querySelector('ul');
+var li = document.querySelector('li');
 
 var secondsLeft = 0;
 var score = 0;
@@ -39,6 +42,7 @@ function setTime() {
       alert('Game Over')
       clearInterval(timerInterval);
       timeEl.setAttribute("style", "opacity: 0;");
+      return;
     }
   }
 
@@ -111,18 +115,23 @@ function setTime() {
            
             submitBtn.setAttribute('style', 'width: 25%; margin: 2%;');
             userInput.setAttribute('style', 'opacity:1;');
+            h2.setAttribute('style', 'opacity:1;')
             timeEl.remove();
             qText.nodeValue= 'Your Score: ' + score
             question.setAttribute('style', 'font-size: 40px; font-weight: bold; display: flex; justify-content:center; margin-bottom:2%;');
             submitBtn.setAttribute('style','opacity:1; margin:2%;')
 
-            submitBtn.addEventListener('click', function(event) {
-              event.preventDefault();
+            submitBtn.addEventListener('click', function() {
               var input = document.getElementById('playerinits').value;
-              localStorage.setItem("userInput", input)
-              localStorage.getItem("userInput", input)
+              localStorage.setItem("saveInput", input)
+              
+              var ul = document.createElement('ul');
+              var li = document.createElement('li');
+              ul.appendChild(li);
+              body.children[1].children[0].appendChild(ul);
+
+
               console.log(input);
-              console.log(saveInput);
             });
           })
         })
