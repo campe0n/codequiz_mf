@@ -9,12 +9,13 @@ var b1 = document.getElementById("b1");
 var b2 = document.getElementById("b2");
 var b3 = document.getElementById("b3");
 var b4 = document.getElementById("b4");
-var userInput = document.body.querySelector("input")
+var userInput = document.getElementById("playerinits");
+var submitBtn = document.getElementById('submitBtn');
+var saveInput = localStorage.getItem("saveInput");
 
 var secondsLeft = 0;
 var score = 0;
 var timerInterval = undefined;
-
 function setTime() {
   if (secondsLeft === 0) secondsLeft = 120;
   timeEl.setAttribute("style", "opacity: 1;")
@@ -26,7 +27,6 @@ function setTime() {
         alert("Game Over");
         clearInterval(timerInterval);
         timeEl.setAttribute("style", "opacity: 0;");
-        return;
       }
     }, 1000)
     return;
@@ -39,7 +39,6 @@ function setTime() {
       alert('Game Over')
       clearInterval(timerInterval);
       timeEl.setAttribute("style", "opacity: 0;");
-      return;
     }
   }
 
@@ -109,20 +108,24 @@ function setTime() {
             b2.remove();
             b3.remove();
             b4.remove();
-            userInput.setAttribute('style', 'opacity:1;')
+           
+            submitBtn.setAttribute('style', 'width: 25%; margin: 2%;');
+            userInput.setAttribute('style', 'opacity:1;');
             timeEl.remove();
-            qText.nodeValue="Your Score:"
-            var scoreText = document.createElement('H1');
-            var scoreTextNode = document.createTextNode(score);
-            scoreText.appendChild(scoreTextNode);
-            body.appendChild(scoreText)
-            question.setAttribute('style', 'margin-bottom: 0;')
-            scoreText.setAttribute('style', 'font-size: 40px; font-weight: bold; display: flex; justify-content:center; margin:0;');
+            qText.nodeValue= 'Your Score: ' + score
+            question.setAttribute('style', 'font-size: 40px; font-weight: bold; display: flex; justify-content:center; margin-bottom:2%;');
+            submitBtn.setAttribute('style','opacity:1; margin:2%;')
+
+            submitBtn.addEventListener('click', function(event) {
+              event.preventDefault();
+              var input = document.getElementById('playerinits').value;
+              localStorage.setItem("userInput", input)
+              localStorage.getItem("userInput", input)
+              console.log(input);
+              console.log(saveInput);
+            });
           })
         })
       })
     })
-    };
-  
-
-  
+    }; 

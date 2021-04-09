@@ -6,6 +6,12 @@ header {
     width: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #vh {
     color:rebeccapurple;
     margin-left: 1%;
@@ -72,5 +78,9 @@ button {
 }
 
 #playerinits {
+opacity: 0;
+}
+
+#submitBtn {
     opacity: 0;
 }
